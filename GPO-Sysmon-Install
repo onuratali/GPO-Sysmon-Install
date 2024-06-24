@@ -1,34 +1,5 @@
-# GPO-Sysmon-Install
-Sysmon (System Monitor) Dağıtımı ve Yönetimi için Group Policy Objects (GPO) Kullanımı
 
-Bu proje, Active Directory (AD) ortamında bulunan Windows tabanlı bilgisayarların güvenlik izleme yeteneklerini artırmak için Sysmon'u (System Monitor) dağıtmak ve yapılandırmak için Group Policy Objects (GPO) kullanımını hedeflemektedir. Sysmon, bilgisayar sistemlerinde olası tehditleri izlemek ve tespit etmek için gelişmiş bir sistem izleme aracıdır. Bu proje, kurum içi bilgisayarların güvenlik durumunu artırmak amacıyla Sysmon'un etkin bir şekilde dağıtılmasını ve yönetilmesini sağlamayı amaçlamaktadır.
-
-Proje Adımları:
-
-Sysmon'un İndirilmesi ve Hazırlanması:
-
-En son Sysmon sürümü Microsoft Sysinternals web sitesinden indirilir.
-Sysmon'un izlenecek olayları ve davranışlarını belirlemek için bir XML konfigürasyon dosyası oluşturulur. Örneğin, hangi işlemlerin izleneceği, hangi ağ bağlantılarının kaydedileceği gibi ayarlar XML dosyasında tanımlanır.
-Group Policy Object (GPO) Oluşturma:
-
-GPO, Active Directory üzerinde bilgisayarlar ve kullanıcılar için yönetim politikalarını otomatik olarak uygulamak için kullanılır.
-GPO Yönetim Konsolu üzerinden yeni bir GPO oluşturulur ve adı "Sysmon Deployment" olarak belirlenir.
-Sysmon'un Dağıtılması ve Yapılandırılması:
-
-Sysmon'un dağıtımı için GPO'da "Software Installation" özelliği kullanılır. Sysmon'un MSI dosyası GPO'ya yüklenir ve hedef bilgisayarlar üzerinde otomatik olarak dağıtılır.
-Sysmon yapılandırma dosyası (XML), bir oturum açma scripti veya PowerShell scripti aracılığıyla hedef bilgisayarların C:\Windows dizinine kopyalanır ve Sysmon yapılandırılır.
-GPO'nun Uygulanması ve Kontrol Edilmesi:
-
-Oluşturulan GPO, ilgili Organizational Unit (OU) veya tüm domain için etkinleştirilir.
-Hedef bilgisayarlar için GPO'nun uygulandığından emin olmak için gpupdate /force komutu kullanılır veya bilgisayarlar yeniden başlatılır.
-GPO'nun başarıyla uygulandığını doğrulamak için hedef bilgisayarların Sysmon tarafından izlenen olayları kaydetmesi beklenir.
-
-
-Group Policy Objects (GPO), Active Directory ortamında Windows tabanlı bilgisayarların yönetimini otomatikleştirmek için kullanılan güçlü bir araçtır. Sysmon (System Monitor), Windows işletim sistemleri için geliştirilmiş bir sistem izleme aracıdır ve genellikle güvenlik olaylarını izlemek için kullanılır. Sysmon'u dağıtmak için GPO kullanabilirsiniz. 
-
-Powershell aracılığıyla Sysmon indirme ve kurma script dosyasına https://github.com/onuratali/GPO-Sysmon-Install/blob/main/download_sysmon_with_powershell.ps1 adresinden ulaşabilirsiniz.
-
-### GPO ile Sysmon Kurulumu Adımları
+**GPO ile Sysmon Kurulumu Adımları**
 
 1. **Sysmon'un İndirilmesi:**
    İlk olarak, Sysmon'un resmi Microsoft Teknik Destek web sitesinden indirilmesi gerekmektedir. Sysmon'un en son sürümünü [Microsoft Sysinternals](https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon) web sitesinden indirebilirsiniz.
